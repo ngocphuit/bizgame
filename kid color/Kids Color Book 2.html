@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- saved from url=(0251)http://games.cdn.famobi.com/html5games/k/kids-color-book-2/v070/?fg_domain=play.famobi.com&fg_aid=A-BUYHTML5GAMES&fg_uid=03b1e156-de50-49d6-964b-01ea276eee3d&fg_pid=987d2350-6278-476a-b573-ee75c6caf3c3&fg_beat=236#_ga=1.237053952.1829883479.1488773983 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no,width=device-width,minimal-ui">
+    <title>Kids Color Book 2</title>
+
+    <link href="./Kids Color Book 2_files/gamestyles.css" rel="stylesheet" type="text/css">
+
+    <script src="./Kids Color Book 2_files/gameapi.js.tải xuống"></script><script type="text/javascript" async="" src="./Kids Color Book 2_files/linkid.js.tải xuống"></script><script type="text/javascript" async="" src="./Kids Color Book 2_files/analytics.js.tải xuống"></script><script src="./Kids Color Book 2_files/987d2350-6278-476a-b573-ee75c6caf3c3"></script><script async="" src="./Kids Color Book 2_files/gtm.js.tải xuống"></script><script src="./Kids Color Book 2_files/v1.js.tải xuống"></script><script>
+        // Package-ID
+        window.famobi_gameID = "kids-color-book-2";
+        window.famobi_gameJS = ['js/all.js', function(){
+            init();
+        }];
+
+        (function (document, url, fgJS, firstJS) {
+                fgJS = document.createElement('script');
+                firstJS = document.getElementsByTagName('script')[0];
+                fgJS.src = url + encodeURIComponent(document.location.href);
+                firstJS.parentNode.insertBefore(fgJS, firstJS);
+        })(document, '/html5games/gameapi/v1.js?e=');
+    </script>
+
+    <script>
+	    function init(apiInstance) {
+
+	        var canvas = document.getElementById("gameCanvas");
+	        var loader = document.getElementById("loader");
+
+
+            var config = {
+	            // On iOS we cannot have music in main menu, before user interacts with the game.
+	            // If portal API already played sound in response to "Play" button, feel free to set it to true.
+	            soundUnMuted: false,
+	            // If portal does not want music in the game, set it to true. Music loading will be skipped.
+	            disableMusic: false,
+	            // Language code for the game UI
+	            language: 'en',
+                hideLangButton: true,
+
+                portal: {
+                 /*logo: "",
+                 sticker: ""*,
+                 logoURL: "",*/
+                 moreGamesButtonImage: famobi.getMoreGamesButtonImage(),
+                 moreGamesButtonScale: 0.3,
+                 moreGamesURL: "nope",
+                },
+
+	            api: {
+	                gameLoadingComplete : function() {
+                    },
+
+                    gameStarted: function () {
+                    },
+
+	                levelComplete: function (score, level) {
+	                },
+	                // Check orientation in the way most appropriate for your network, return true if you
+	                // want to block the game and display rotation sign.
+	                // If you keep viewporter library import, this function is called as part of viewportchange event,
+	                // if you like, feel free to check for window.orientation here.
+	                // Just return "false" if you don't want this functionality.
+	                orientationLock: function () {
+
+                        // Viewporter says it is desktop or older android device? Viewporter lib is removed alltogether?
+                        // Better not do rotation check in that case IMO.
+                        //alert(viewporter.viewporter.ACTIVE);
+                        if (!viewporter || !viewporter.ACTIVE) {
+                            return false;
+                        }
+                        // Looks like landscape on narrow device? Ask user to rotate!
+                        var isLandscape = window.innerHeight > window.innerWidth && window.innerHeight <= 640;
+                        return isLandscape;
+	                }
+	            }
+
+	        };
+	        app.initialize(canvas, config);
+	    }
+	</script>
+
+<script async="" src="./Kids Color Book 2_files/firebase.js.tải xuống"></script><link rel="icon" type="image/png" sizes="32x32" href="https://img.cdn.famobi.com/portal/html5games/images/tmp/32/KidsColorBook2Teaser.jpg"><link rel="icon" type="image/png" sizes="64x64" href="https://img.cdn.famobi.com/portal/html5games/images/tmp/64/KidsColorBook2Teaser.jpg"><link rel="icon" type="image/png" sizes="96x96" href="https://img.cdn.famobi.com/portal/html5games/images/tmp/96/KidsColorBook2Teaser.jpg"><link rel="icon" type="image/png" sizes="192x192" href="https://img.cdn.famobi.com/portal/html5games/images/tmp/192/KidsColorBook2Teaser.jpg"><link rel="canonical" href="http://play.famobi.com/kids-color-book-2/A-BUYHTML5GAMES"><link rel="stylesheet" type="text/css" href="./Kids Color Book 2_files/play.css">	<style type="text/css">
+		
+	</style></head>
+
+<body style="overflow: hidden;"><div id="fg-root" class="fg-root" style="opacity: 1; transition: opacity 1.5s;"><div id="fg-overlay" class=""><header id="fg-header"><div id="fg-back" class="icon-arrow icon-arrow-left" data-fg-module="navigation" data-fg-method="show"></div><div id="fg-logo"><img src="./Kids Color Book 2_files/582591776a073.png" alt=""></div><div class="fg-clip" id="fg-clip"><div class="fg-clip-btn"><img src="./Kids Color Book 2_files/icon.png" alt=""></div></div></header><nav id="fg-navigation" style="position: relative; display: none;"><ul><li data-famobi-href="back" style="cursor: pointer;"><a href="javascript:void(0);" data-i18n="api.back">« Back</a></li><li data-famobi-href="moreGames" style="cursor: pointer;"><a href="javascript:void(0);" data-i18n="api.more">» More Games</a></li><li data-famobi-fullscreen=""><a href="javascript:void(0);" data-i18n="api.fullscreen">[+] Fullscreen mode</a></li><li class="fg-lang" data-switch-lang="de"><a href="javascript:void(0);"><img class="fg-flag" src="./Kids Color Book 2_files/flag_de.png" alt="de"></a></li><li class="fg-lang" data-switch-lang="en"><a href="javascript:void(0);"><img class="fg-flag" src="./Kids Color Book 2_files/flag_en.png" alt="en"></a></li><li class="fg-lang" data-switch-lang="es"><a href="javascript:void(0);"><img class="fg-flag" src="./Kids Color Book 2_files/flag_es.png" alt="es"></a></li><li class="fg-lang" data-switch-lang="fr"><a href="javascript:void(0);"><img class="fg-flag" src="./Kids Color Book 2_files/flag_fr.png" alt="fr"></a></li><li class="fg-lang" data-switch-lang="it"><a href="javascript:void(0);"><img class="fg-flag" src="./Kids Color Book 2_files/flag_it.png" alt="it"></a></li><li class="fg-lang" data-switch-lang="nl"><a href="javascript:void(0);"><img class="fg-flag" src="./Kids Color Book 2_files/flag_nl.png" alt="nl"></a></li><li class="fg-lang" data-switch-lang="pl"><a href="javascript:void(0);"><img class="fg-flag" src="./Kids Color Book 2_files/flag_pl.png" alt="pl"></a></li><li class="fg-lang" data-switch-lang="pt"><a href="javascript:void(0);"><img class="fg-flag" src="./Kids Color Book 2_files/flag_pt.png" alt="pt"></a></li><li class="fg-lang" data-switch-lang="ru"><a href="javascript:void(0);"><img class="fg-flag" src="./Kids Color Book 2_files/flag_ru.png" alt="ru"></a></li><li class="fg-lang" data-switch-lang="tr"><a href="javascript:void(0);"><img class="fg-flag" src="./Kids Color Book 2_files/flag_tr.png" alt="tr"></a></li></ul></nav></div><div class="fg-spinner" style="display: none; visibility: hidden; left: 50%; opacity: 0;"><div id="cssload-pgloading"><div class="cssload-loadingwrap"><ul class="cssload-bokeh"><li></li><li></li><li></li><li></li></ul></div></div></div><div class="fg-spinner-outline" style="position: absolute; display: none; visibility: hidden; top: 0px; left: 0px; right: 0px; bottom: 0px; background: rgba(255, 255, 255, 0.498039); opacity: 0;"><div></div></div><div class="fg-modal-overlay" style="display: none;"></div><div class="fg-modal fg-fade fg-show ad-mode" style="max-height: 310px; max-width: 320px; display: none;"><header style="display: none;"></header><div class="fg-modal-body"><div id="fg-iframe-container"><iframe id="fg-iframe" class="fg-iframe" name="fg-iframe" src="./Kids Color Book 2_files/saved_resource.html" style="background: transparent none;" scrolling="no"></iframe></div></div><div class="fg-modal-close icon-cancel" data-disable="true"><span class="counter">1</span></div></div></div>
+    <div id="viewporter">
+	    <div id="canvasHolder" style="position: absolute; overflow: hidden; width: 0px; height: 659px; left: 683px; top: 0px;"><canvas id="gameCanvas" style="position: absolute; width: 0px; height: 659px;" width="0" height="640"></canvas></div>
+    </div>
+    <div style="height: 1px"></div>
+
+
+<script type="text/javascript" id="">function famobi_gtmOptOut(){var a="GTM-optout";document.cookie=a+"\x3dtrue; expires\x3dThu, 31 Dec 2099 23:59:59 UTC; path\x3d/"+(location.hostname.indexOf("famobi.com")===location.hostname.length-10?";domain\x3dfamobi.com":"");window[a]=!0};</script><script src="./Kids Color Book 2_files/all.js.tải xuống"></script></body></html>
