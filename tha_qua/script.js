@@ -157,8 +157,9 @@ function init(event) {
 	objlua.y = ViTri[0].y;
 
 	objday.y = 25;
-	objday.scaleX = 0.4;
-	objday.scaleY = 0.2;
+	objday.x = 1;
+	objday.scaleX = 1;
+	objday.scaleY = 1;
 
 	objcau.scaleX = 0.5;
 	objcau.scaleY = 0.5;
@@ -229,7 +230,7 @@ abc = new createjs.Shape();
 	function VaoLo(target) {
 		for (var i = 0; i < ViTriO.length; i++) {
 			//console.log(objcau.x + '-' + ViTriO[2].x + '-' + 110  + ' ' + objcau.y + ' ' + ViTriO[2].y);
-			if(target.x>=ViTriO[i].x-30&&target.x<=ViTriO[i].x+110 && target.y >= ViTriO[i].y-10 && target.y < ViTriO[i].y+30 )
+			if(target.x>=ViTriO[i].x-20&&target.x<=ViTriO[i].x+50 && target.y >= ViTriO[i].y-10 && target.y < ViTriO[i].y+30 )
 			return true; 
 		}
 		return false;
@@ -299,8 +300,8 @@ var BatDauGame = () => {
 	objday.visible = true;
 	objcau.visible = true;
 };
-//var MyRewards = MyGameData.rewards,
-//TotalRewards = Object.keys(MyRewards).length;
+var MyRewards = MyGameData.rewards,
+TotalRewards = Object.keys(MyRewards).length;
 let getGift = () => {
-//	SendMyResults(MyGameData.rewards[Math.floor(Math.random() * TotalRewards)]._id);
+	SendMyResults(MyGameData.rewards[Math.floor(Math.random() * TotalRewards)]._id);
 };
