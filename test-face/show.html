@@ -1,37 +1,186 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta charset="utf-8">
+
     <title>test face</title>
-</head>
-<body style="background-image: url(images/background.jpg); background-repeat: no-repeat; background-size: 100%; font-family: 'Times New Roman">
-<h1 style="text-align: center; font-family: 'Times New Roman' ">test face</h1>
-<h3 style="text-align: center;">Các chuyên gia hàng đầu về spa đánh giá như thế nào về khuôn mặt của bạn</h3>
-<div>
-    <div class="row">
-        <div style="width: 50%; float: left;">
-            <form id="form1" runat="server">
-                <img id="blah" src="#"  style="width: 70%; height: auto;" />
-            </form>
-            <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-            <script type="text/javascript">   
+
+   <!-- <style type="text/css">
+    .a{
+        position: relative;
+        background: #00FF08;
+        width: 500px; height: 10px;
+       transition: all 1s 0.2s ease-in;
+      -moz-transition: all 1s 0.2s ease-in;
+      -webkit-transition: all 1s 0.2s ease-in;
+      top: -25px;
+    }
+    .a:hover {
+        position: relative;
+        background: blue;
+        top: -350px;
+        margin-bottom: 350px;
+    }
+    </style> -->
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <script >
+    var chay=true;
+        function quet() {
+
+          var $rad = $('#rad'),
+              $obj = $('.obj'),
+              deg = 0,
+              rad = $rad.width() / 2;
+
+          $obj.each(function(){
+            var pos = $(this).data(),
+                getAtan = Math.atan2(pos.x-rad, pos.y-rad),
+                getDeg = (-getAtan/(Math.PI/180) + 180) | 0;
+            // Read/set positions and store degree
+            $(this).css({left:pos.x, top:pos.y}).attr('data-atDeg', getDeg);
+          });
+
+          (function rotate() {      
+            $rad.css({transform: 'rotate('+ deg +'deg)'}); // Radar rotation
+            $('[data-atDeg='+deg+']').stop().fadeTo(0,2).fadeTo(1700,0.2); // Animate dot at deg
+
+            deg = ++deg % 360;      // Increment and reset to 0 at 360
+            if(chay==true)
+            setTimeout(rotate, 10); // LOOP
+        
+          })();
+
+        }
+    </script>
+
+   
+        <script type="text/javascript">   
             function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
                 
                 reader.onload = function (e) {
                     $('#blah').attr('src', e.target.result);
+                    quet();
+                    setTimeout(()=>chay=false,5000);
+                    $(document).ready(function(){
+                    var noidung = $('#noidung');
+                    noidung.show(5000);
+                         });
+                    $(document).ready(function(){
+                    var rad = $('#radar')
+                    rad.hide(16000);
+                         });
+
+                    var i =Math.floor(Math.random()*5+1);
+
+                    if(i%2 == 0){
+                       $(document).ready(function(){
+                        var b1 = $('#b1')
+                        b1.hide(500);
+                             });
+                        
+                    }
+                    else{
+                        $(document).ready(function(){
+                        var b2 = $('#b2')
+                        b2.hide(500);
+                             });
+                        
+                    };
+                }
                 }
                 
                 reader.readAsDataURL(input.files[0]);
             }
-        }
+        
         
         $("#imgInp").change(function(){
             readURL(this);
-        });</script>
+        });
+    </script>
+
+
+
+    <style type="text/css">
+        #radar{
+          position:relative;
+          overflow:hidden;
+          width:400px; height:400px;
+        }
+        #rad{
+          position:absolute;
+          width:321px;
+          height:321px; background:url(http://i.stack.imgur.com/fbgUD.png);
+        }
+        .obj{
+          background:#cf5;
+          position:absolute;
+          width:6px; height:6px; margin:-2px;
+          box-shadow:0 0 10px 5px rgba(100,255,0,0.5);
+          opacity:0.2;
+        }
+        .a{
+            position: relative;
+            top: -325px;
+            margin-bottom: 325px;
+        }
+        body{
+          background-image: url(images/background.jpg); background-repeat: no-repeat; background-size: 100%; font-family: 'Times New Roman', Arial;  
+        }
+        h1{
+            text-align: center; font-family: 'Times New Roman' Arial;
+        }
+
+        #left{width: 50%; float: left;}
+        .h3{text-align: center;}
+        #blah{width: 321px; height: 321px; border-radius: 50%}
+        #noidung{display: none;width: 50%; float: left;}
+        #noidung img{position: absolute; width: 400px}
+        #sub-noidung{position: relative; margin: 0 40px; top: 70px; width: 330px}
+
+    </style>
+
+   
+
+</head>
+<body style="font-family: 'Times New Roman'">
+<h1 >test face</h1>
+<h3 class="h3" >Các chuyên gia hàng đầu về spa đánh giá như thế nào về khuôn mặt của bạn</h3>
+<div>
+    <div class="row">
+        <div id="left" >
+            <h3>Hãy chọn ảnh của bạn</h3>
+            <form id="form1" runat="server">
+                <input type='file' id="imgInp" />
+                <img id="blah" src="http://i582.photobucket.com/albums/ss265/summerrain_9/summerrain/summerrain/login_form.png"  />
+
+            </form>
+            
+         <div class="a">
+            <div id="radar">
+                <div id="rad"></div>
+                <div class="obj" data-x="120" data-y="65"></div>
+                <div class="obj" data-x="140" data-y="185"></div>
+                <div class="obj" data-x="220" data-y="35"></div>
+                <div class="obj" data-x="120" data-y="235"></div>
+              </div>
+            </div>
+       
         </div>
-        <div style="width: 50%; float: left; background: #f1f1f1; opacity: 0.8">
-            <p style="padding: 10px">nội dung các chuyên gia spa nói đến: </p>
+
+
+        <div id="noidung" >
+       
+
+            <img src="images/noidung.png" >
+            <div id="sub-noidung" >
+                <p id="b1" >Gương mặt bạn rất duyên, bạn nên cố gắng chăm sóc và giữ gìn nhan sắc này nhé. Với gương mặt này bạn có thể có rất nhiều người theo đuổi hãy cơi mở ra để đón nhận nha bạn :)</p>
+                <p id="b2" >Gương mặt bạn thật sự rất hoàn hảo, nét mặt thể hiện một tâm hồn tươi sáng, biết vượt qua cái khó của cuộc sống. Với gương mặt này bạn có không ít người sẽ theo đuổi, nhưng hãy chọn một người thương mình thật sự bạn nhé :)</p>
+            </div>
         </div>
     </div>
 </div>
