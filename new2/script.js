@@ -3,7 +3,7 @@ startLoad();
 var stage = new createjs.Stage("game");
 var nen,objNen,hop_qua,nut,objNut, q1, q2, q3, q4, q5, bom;
 var nen2,objNen2;
-var objHopQua = [], obj1 = [], obj2 = [], obj3 = [], obj4 = [], obj5 = [], objbom = [] ;
+var objHopQua = [];
 function startLoad() {
     queue = new createjs.LoadQueue(true);
     queue.on("complete", stopLoad, this);
@@ -27,51 +27,12 @@ var current=0;
 function TaoHopQua() {
     if(current >= objHopQua.length) {clearInterval(createTimer);return;}
     objHopQua[current].visible = true;
-    createjs.Tween.get(objHopQua[current], {loop: true}).to({y: 700}, 8000, createjs.Ease.getPowInOut(4)).call(() => {objHopQua.x = Math.floor(Math.random() * (900 - 100 + 1) + 100)});
+    createjs.Tween.get(objHopQua[current], {loop: true}).to({y: 700}, 8000, 
+    createjs.Ease.getPowInOut(4)).call(() => {objHopQua.x = Math.floor(Math.random() * (900 - 100 + 1) + 100)});
     current++;
 }
 
-function TaoQua1() {
-    if(current >= obj1.length) {clearInterval(createTimer);return;}
-    obj1[current].visible = true;
-    createjs.Tween.get(obj1[current], {loop: true}).to({y: 700}, 8000, createjs.Ease.getPowInOut(2)).call(() => {obj1.x = Math.floor(Math.random() * (900 - 100 + 1) + 100)});
-    current++;
-}
 
-function TaoQua2() {
-    if(current >= obj2.length) {clearInterval(createTimer);return;}
-    obj2[current].visible = true;
-    createjs.Tween.get(obj2[current], {loop: true}).to({y: 700}, 6500, createjs.Ease.getPowInOut(7)).call(() => {obj2.x = Math.floor(Math.random() * (900 - 100 + 1) + 100)});
-    current++;
-}
-
-function TaoQua3() {
-    if(current >= obj3.length) {clearInterval(createTimer);return;}
-    obj3[current].visible = true;
-    createjs.Tween.get(obj3[current], {loop: true}).to({y: 700}, 7500, createjs.Ease.getPowInOut(3)).call(() => {obj3.x = Math.floor(Math.random() * (700 - 100 + 1) + 100)});
-    current++;
-}
-
-function TaoQua4() {
-    if(current >= obj4.length) {clearInterval(createTimer);return;}
-    obj4[current].visible = true;
-    createjs.Tween.get(obj4[current], {loop: true}).to({y: 700}, 6000, createjs.Ease.getPowInOut(5)).call(() => {obj4.x = Math.floor(Math.random() * (600 - 100 + 1) + 100)});
-    current++;
-}
-
-function TaoQua5() {
-    if(current >= obj5.length) {clearInterval(createTimer);return;}
-    obj5[current].visible = true;
-    createjs.Tween.get(obj5[current], {loop: true}).to({y: 700}, 7000, createjs.Ease.getPowInOut(6)).call(() => {obj5.x = Math.floor(Math.random() * (800 - 100 + 1) + 100)});
-    current++;
-}
-
-function TaoBom() {
-    if(current >= objbom.length) {clearInterval(createTimer);return;}
-    objbom[current].visible = true;
-    createjs.Tween.get(objbom[current], {loop: true}).to({y: 700}, 4000, createjs.Ease.getPowInOut(6)).call(() => {objbom.x = Math.floor(Math.random() * (900 - 100 + 1) + 100)});
-    current++;
-}
 
 function stopLoad(event) {
     nen = queue.getResult("nen");
@@ -87,45 +48,20 @@ function stopLoad(event) {
 
     objNen = new createjs.Bitmap(nen);
 
-    for(var i=0;i<20;i++) {
-        obj1[i] = new createjs.Bitmap(q1);
-        obj1[i].visible = false;
-        
-    }
 
-    for(var i=0;i<20;i++) {
-        obj2[i] = new createjs.Bitmap(q2);
-        obj2[i].visible = false;
-        
-    }
-
-    for(var i=0;i<20;i++) {
-        obj3[i] = new createjs.Bitmap(q3);
-        obj3[i].visible = false;
-        
-    }
-
-    for(var i=0;i<20;i++) {
-        obj4[i] = new createjs.Bitmap(q4);
-        obj4[i].visible = false;
-        
-    }
-
-    for(var i=0;i<20;i++) {
-        obj5[i] = new createjs.Bitmap(q5);
-        obj5[i].visible = false;
-        
-    }
-
-    for(var i=0;i<20;i++) {
-        objbom[i] = new createjs.Bitmap(bom);
-        objbom[i].visible = false;
-        
-    }
-
-
-    for(var i=0;i<20;i++) {
-        objHopQua[i] = new createjs.Bitmap(hop_qua);
+    for(var i=0;i<24;i++) {
+        if(i==0 || i==6 || i==17 || i==18)
+            objHopQua[i] = new createjs.Bitmap(bom);
+        else if(i==1 || i==7 || i==16 || i==19)
+            objHopQua[i] = new createjs.Bitmap(q1);
+        else if(i==2 || i==8 || i==15 || i==20)
+            objHopQua[i] = new createjs.Bitmap(q2);
+        else if(i==3 || i==9 || i==14 || i==21)
+            objHopQua[i] = new createjs.Bitmap(q3);
+        else if(i==4 || i==10 || i==13 || i==22)
+            objHopQua[i] = new createjs.Bitmap(q4);
+        else(i==5 || i==11 || i==12 || i==23)
+            objHopQua[i] = new createjs.Bitmap(q5);
         objHopQua[i].visible = false;
         
     }
@@ -162,48 +98,7 @@ function init(event) {
         objHopQua[i].addEventListener("click", getGift);
     }
 
-    for(var i=0;i<obj1.length;i++) {
-        obj1[i].y = -200;
-        obj1[i].x = Math.floor(Math.random() * (900 - 100 + 1) + 100);
-        stage.addChild(obj1[i]);
-        obj1[i].addEventListener("click", getGift);
-    }
-
-    for(var i=0;i<obj2.length;i++) {
-        obj2[i].y = -200;
-        obj2[i].x = Math.floor(Math.random() * (900 - 100 + 1) + 100);
-        stage.addChild(obj2[i]);
-        obj2[i].addEventListener("click", getGift);
-    }
-
-    for(var i=0;i<obj3.length;i++) {
-        obj3[i].y = -200;
-        obj3[i].x = Math.floor(Math.random() * (700 - 100 + 1) + 100);
-        stage.addChild(obj3[i]);
-        obj3[i].addEventListener("click", getGift);
-    }
-
-    for(var i=0;i<obj4.length;i++) {
-        obj4[i].y = -200;
-        obj4[i].x = Math.floor(Math.random() * (600 - 100 + 1) + 100);
-        stage.addChild(obj4[i]);
-        obj4[i].addEventListener("click", getGift);
-    }
-
-    for(var i=0;i<obj5.length;i++) {
-        obj5[i].y = -200;
-        obj5[i].x = Math.floor(Math.random() * (800 - 100 + 1) + 100);
-        stage.addChild(obj5[i]);
-        obj5[i].addEventListener("click", getGift);
-    }
-
-    for(var i=0;i<objbom.length;i++) {
-        objbom[i].y = -200;
-        objbom[i].x = Math.floor(Math.random() * (900 - 100 + 1) + 100);
-        stage.addChild(objbom[i]);
-        objbom[i].addEventListener("click", getGift);
-    }
-
+    
     stage.addChild(objNut);
     // setTimeout(() => {
     //  SendMyResults(idRewards);
@@ -225,12 +120,7 @@ var BatDauGame = () => {
     objNen2.visible = true;
     objNut.visible = false;
     var createTimer = setInterval(TaoHopQua, 500);
-    var createTimer = setInterval(TaoQua1, 400);
-    var createTimer = setInterval(TaoQua4, 300);
-    var createTimer = setInterval(TaoQua3, 200);
-    var createTimer = setInterval(TaoQua2, 100);
-    var createTimer = setInterval(TaoQua5, 600);
-    var createTimer = setInterval(TaoBom, 500);
+   
 };
 //var MyRewards = MyGameData.rewards,
 //TotalRewards = Object.keys(MyRewards).length;
